@@ -25,15 +25,27 @@
 
 ```
 ai-native-dev-operation/
-├── articles/                       ← Zenn投稿用の記事本体（全8本）
-│   ├── 00-introduction.md          ← 序章：AIネイティブ開発の定義と従来開発との違い
-│   ├── 01-operator.md              ← 第1章：オペレーター（人間の役割再定義）
-│   ├── 02-ai-roles.md              ← 第2章：5つのAIロールと相互牽制の設計原則
-│   ├── 03-phase0-2.md              ← 第3章：Phase 0〜2（課題発見・要件整理）
-│   ├── 04-phase3-5.md              ← 第4章：Phase 3〜5（設計・プロトタイプ）
-│   ├── 05-phase6-8.md              ← 第5章：Phase 6〜8（フィードバック〜フルスケール）
-│   ├── 06-review-structure.md      ← 第6章：レビューの3層構造（品質ゲート・安全ゲート）
-│   └── 07-principles.md            ← 第7章：壁打ちの非対称性と横断的品質原則
+├── articles/                       ← Zenn投稿用の個別記事（全8本、frontmatter付き）
+│   ├── 00-introduction.md          ← 序章（published: true ── 無料公開）
+│   ├── 01-operator.md              ← 第1章（published: true ── 無料公開）
+│   ├── 02-ai-roles.md              ← 第2章（published: true ── 無料公開）
+│   ├── 03-phase0-2.md              ← 第3章（published: false ── Book有料版で提供）
+│   ├── 04-phase3-5.md              ← 第4章（published: false）
+│   ├── 05-phase6-8.md              ← 第5章（published: false）
+│   ├── 06-review-structure.md      ← 第6章（published: false）
+│   └── 07-principles.md            ← 第7章（published: false）
+│
+├── books/                          ← Zenn Book（有料販売）
+│   └── ai-native-dev/
+│       ├── config.yaml             ← Book設定（タイトル・価格1,000円・チャプター順序）
+│       ├── introduction.md         ← 序章（free: true ── 無料チャプター）
+│       ├── operator.md             ← 第1章（free: true ── 無料チャプター）
+│       ├── ai-roles.md             ← 第2章
+│       ├── phase0-2.md             ← 第3章
+│       ├── phase3-5.md             ← 第4章
+│       ├── phase6-8.md             ← 第5章
+│       ├── review-structure.md     ← 第6章
+│       └── principles.md           ← 第7章
 │
 ├── ai-native-dev-navigator.md      ← AIナビゲーター用システムプロンプト
 │                                      Claude Code / Claude Projectsに読み込ませると
@@ -53,6 +65,9 @@ ai-native-dev-operation/
 ├── zenn-publishing-guide.md        ← Zenn投稿時のメタデータ設定ガイド
 │                                      各記事のトピック・絵文字・タイプ設定、
 │                                      Zenn固有マークダウン記法の差し込み推奨箇所
+│
+├── package.json                    ← Node.js設定（zenn-cli依存）
+├── .gitignore                      ← node_modules除外設定
 │
 └── HANDOVER.md                     ← 本ファイル（AI間引継ぎドキュメント）
 ```
@@ -160,6 +175,38 @@ chapters:
 
 ---
 
+## 完了済みタスク
+
+1. ~~**記事へのZenn固有マークダウン差し込み**~~ ✅
+   - 全8記事に `:::message` / `:::message alert` / `:::details` を適用済み
+   - `zenn-publishing-guide.md` の推奨箇所に沿って実施
+
+2. ~~**投稿形式の決定：併用方式を採用**~~ ✅
+   - 序章〜第2章を無料記事（`published: true`）で公開し認知を獲得
+   - 全8章をBook（有料1,000円）として販売
+   - 第3章以降の個別記事は `published: false`（下書き状態）
+
+3. ~~**Zenn CLIのセットアップ**~~ ✅
+   - `zenn-cli` をローカルインストール済み（`package.json` に追加）
+   - `npx zenn init` で `articles/` / `books/` ディレクトリ構造を生成
+   - `books/ai-native-dev/config.yaml` と全8チャプターファイルを配置済み
+
+4. ~~**全記事にfrontmatter追加**~~ ✅
+   - 序章〜第2章：`published: true`（無料公開用）
+   - 第3章〜第7章：`published: false`（下書き。Book有料版で提供）
+   - 各記事に `title` / `emoji` / `type` / `topics` を設定済み
+
+5. ~~**連載目次と前後リンクの追加**~~ ✅
+   - 全8記事の冒頭に短縮連載目次を追加
+   - 各記事の末尾に前後記事へのナビゲーションリンクを追加
+   - Zenn投稿後にURLが確定したら、リンクを実URLに更新する必要あり
+
+6. ~~**Book用チャプターへのZenn固有マークダウン差し込み**~~ ✅
+   - Book版チャプターにも `:::message` / `:::message alert` / `:::details` を適用済み
+   - 序章と第1章は `free: true`（無料公開チャプター）
+
+---
+
 ## 未完了タスク（次のAIへの引継ぎ事項）
 
 ### 優先度：高
@@ -169,27 +216,30 @@ chapters:
    - 自己紹介文案を2パターン提案済み
    - GitHubアカウント連携でログイン → プロフィール設定が必要
 
-2. **記事へのZenn固有マークダウン差し込み**
-   - `zenn-publishing-guide.md` に推奨箇所が定義済み
-   - 各記事に `:::message` / `:::message alert` / `:::details` を実際に適用する作業が未実施
+2. **GitHubリポジトリをZennに連携**
+   - Zennダッシュボード → Deploys → GitHubリポジトリ連携を設定
+   - mainブランチへのプッシュで自動デプロイされるようにする
 
-3. **投稿形式の決定：個別記事 or Book**
-   - 個別記事（無料）かBook（有料）か、併用かを決定する必要がある
-   - 併用が推奨だが、オペレーターの判断待ち
+3. **リポジトリのプライベート化**（有料Bookのため必須）
+   - パブリックのままだとBookのコンテンツが無料で読めてしまう
+   - Zenn GitHub連携でプライベートリポジトリからもデプロイ可能
 
 ### 優先度：中
 
-4. **Zenn CLIのセットアップ**（Book化する場合）
-   - `npm install -g zenn-cli` → `npx zenn init`
-   - `books/` ディレクトリに `config.yaml` と各チャプターファイルを配置
-   - リポジトリをプライベートにする（有料コンテンツの場合）
-
-5. **カバー画像の作成**（Book化する場合）
+4. **カバー画像の作成**
    - 推奨サイズ：500×700px
+   - `books/ai-native-dev/cover.png` として配置
    - AIネイティブ開発のコンセプトを表現するデザインが必要
 
-6. **連載目次と前後リンクの追加**
-   - 記事を投稿した後にURLが確定するため、投稿順に実施する必要がある
+5. **投稿後のリンク更新**
+   - 無料記事（序章〜第2章）の投稿後にURLが確定する
+   - 各記事の連載目次と前後リンクを実URLに更新する
+   - 無料記事末尾にBook版（有料）への誘導リンクを追加する
+
+6. **Book価格の最終決定**
+   - 現在の設定：1,000円
+   - 200〜5,000円の範囲で調整可能（100円単位）
+   - オペレーターの判断待ち
 
 ### 優先度：低
 
@@ -204,11 +254,15 @@ chapters:
 | 項目 | 決定内容 |
 |------|---------|
 | 記事の数 | 全8本（序章 + 第1〜7章） |
-| 記事の保管場所 | `articles/` ディレクトリ |
-| Zennメタデータ | `zenn-publishing-guide.md` に全記事分を定義済み |
+| 記事の保管場所 | `articles/` ディレクトリ（個別記事）、`books/ai-native-dev/` ディレクトリ（Book版） |
+| Zennメタデータ | 全記事にfrontmatter適用済み。`zenn-publishing-guide.md` に設計意図を記録 |
 | 全記事のtype | `tech` |
 | 有料化の方法 | Zennでは記事単体の有料販売は不可。**Book形式のみ有料販売可能**（200〜5,000円） |
-| 推奨収益化戦略 | 序章〜第2章を無料記事で公開 → 全8章をBookとして有料販売の併用 |
+| 収益化戦略（確定） | **併用方式**：序章〜第2章を無料記事で公開（`published: true`） → 全8章をBookとして有料販売（1,000円） |
+| Book無料チャプター | 序章と第1章を `free: true` に設定（集客効果のため） |
+| Zenn CLI | ローカルインストール済み（`package.json` に `zenn-cli` 追加） |
+| Zenn固有マークダウン | 全記事・全チャプターに `:::message` / `:::message alert` / `:::details` を適用済み |
+| 連載ナビゲーション | 全記事に連載目次と前後記事リンクを追加済み |
 | アカウント登録 | 未実施。ニックネーム・自己紹介文の案は提示済み |
 
 ---

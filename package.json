@@ -1,0 +1,21 @@
+{
+  "name": "ai-native-dev-operation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preview": "npx zenn preview",
+    "new:article": "npx zenn new:article",
+    "new:book": "npx zenn new:book"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:33908/git/firedevsystem/ai-native-dev-operation"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "zenn-cli": "^0.4.5"
+  }
+}
