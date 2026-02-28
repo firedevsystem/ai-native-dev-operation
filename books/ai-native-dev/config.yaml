@@ -1,0 +1,24 @@
+title: "AIネイティブ開発 実践ガイド ── 5つのAIロールと9つの開発フェーズで実現する構造的品質保証"
+summary: |
+  12年のフルスタックエンジニア経験に基づいて確立された「AIネイティブ開発手法」の全体像を解説します。
+  AIを単なるツールとしてではなく、開発チームの構成員として構造的に組み込む実践手法です。
+  5つのAIロールによる相互牽制、9つの開発フェーズとゲート条件、レビューの3層構造など、
+  品質を構造で保証する設計思想を、具体例とともに体系的に学べます。
+topics:
+  - ai
+  - 開発手法
+  - チーム開発
+  - コードレビュー
+  - 設計
+published: true
+price: 1000
+toc_depth: 2
+chapters:
+  - introduction
+  - operator
+  - ai-roles
+  - phase0-2
+  - phase3-5
+  - phase6-8
+  - review-structure
+  - principles
