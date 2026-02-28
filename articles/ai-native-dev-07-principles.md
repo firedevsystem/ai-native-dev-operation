@@ -122,4 +122,4 @@ Phase 0〜2ではオペレーターのドメイン知識を引き出す。Phase 
 
 ---
 
-**← 前の記事：** 第6章 レビューの3層構造 ── 品質ゲートと安全ゲート
+**← 前の記事：** [第6章 レビューの3層構造 ── 品質ゲートと安全ゲート](https://zenn.dev/firedev/articles/ai-native-dev-06-review-structure)

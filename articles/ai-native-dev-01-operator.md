@@ -117,5 +117,5 @@ AIとオペレーターには、それぞれ優位に立つ領域がある。
 
 ---
 
-**← 前の記事：** 序章 AIネイティブ開発とは何か
-**→ 次の記事：** 第2章 5つのAIロールと相互牽制の設計原則
+**← 前の記事：** [序章 AIネイティブ開発とは何か](https://zenn.dev/firedev/articles/ai-native-dev-00-introduction)
+**→ 次の記事：** [第2章 5つのAIロールと相互牽制の設計原則](https://zenn.dev/firedev/articles/ai-native-dev-02-ai-roles)

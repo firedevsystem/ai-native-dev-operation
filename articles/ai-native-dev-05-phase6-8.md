@@ -143,5 +143,5 @@ MVPリリース済みで、残り機能の実装も進んでいる状態で「Ph
 
 ---
 
-**← 前の記事：** 第4章 Phase 3〜5：設計とプロトタイプの反復ループ
-**→ 次の記事：** 第6章 レビューの3層構造 ── 品質ゲートと安全ゲート
+**← 前の記事：** [第4章 Phase 3〜5：設計とプロトタイプの反復ループ](https://zenn.dev/firedev/articles/ai-native-dev-04-phase3-5)
+**→ 次の記事：** [第6章 レビューの3層構造 ── 品質ゲートと安全ゲート](https://zenn.dev/firedev/articles/ai-native-dev-06-review-structure)

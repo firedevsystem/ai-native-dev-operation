@@ -132,5 +132,5 @@ PM・スクラムマスター → コーディングエージェント（要件�
 
 ---
 
-**← 前の記事：** 第1章 オペレーター ── 作業者から意思決定者へ
-**→ 次の記事：** 第3章 Phase 0〜2：顧客の真の課題に到達するまで妥協しない
+**← 前の記事：** [第1章 オペレーター ── 作業者から意思決定者へ](https://zenn.dev/firedev/articles/ai-native-dev-01-operator)
+**→ 次の記事：** [第3章 Phase 0〜2：顧客の真の課題に到達するまで妥協しない](https://zenn.dev/firedev/articles/ai-native-dev-03-phase0-2)

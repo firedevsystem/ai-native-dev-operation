@@ -147,5 +147,5 @@ Phase 3に進む前に、以下の2条件を必ず確認する。
 
 ---
 
-**← 前の記事：** 第2章 5つのAIロールと相互牽制の設計原則
-**→ 次の記事：** 第4章 Phase 3〜5：設計とプロトタイプの反復ループ
+**← 前の記事：** [第2章 5つのAIロールと相互牽制の設計原則](https://zenn.dev/firedev/articles/ai-native-dev-02-ai-roles)
+**→ 次の記事：** [第4章 Phase 3〜5：設計とプロトタイプの反復ループ](https://zenn.dev/firedev/articles/ai-native-dev-04-phase3-5)
