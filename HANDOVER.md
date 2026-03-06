@@ -67,7 +67,7 @@ ai-native-dev-operation/
 
 ### ドキュメント構造の設計思想
 
-旧構造（navigator.md + review-ruleset.md + gem-prompt.md の3ファイル）を、以下の設計思想で再構成した:
+旧構造（navigator.md + review-ruleset.md の2ファイル）を、以下の設計思想で再構成した:
 
 1. **共通知識の分離:** 全ロールが参照する原則・フェーズ定義・レビュー基準を `common/` に集約し、冗長性を排除
 2. **ロール別プロンプト:** 5つのAIロールそれぞれに独立したシステムプロンプトを生成（`roles/`）
