@@ -40,7 +40,6 @@ ai-native-dev-operation/
 │   │   ├── system-auditor.md            ← システム監査官
 │   │   └── user-ops-support.md          ← ユーザー・運用サポート
 │   │
-│   └── takahiro-gem-prompt.md           ← 著者の思考パターン再現Gem（独立利用）
 │
 ├── guides/                              ← 人間向けガイド
 │   ├── usage-guide.md                   ← ドキュメント活用ガイド
@@ -84,7 +83,6 @@ ai-native-dev-operation/
 | コードレビュアー | core-principles + review-standards + roles/code-reviewer |
 | システム監査官 | core-principles + review-standards + roles/system-auditor |
 | ユーザー・運用サポート | core-principles + phase-definitions + roles/user-ops-support |
-| 壁打ちGem（独立） | takahiro-gem-prompt.md のみ |
 
 - `articles/` 配下の8記事は、方法論の思想を**一般読者向けに解説した記事**である
 - 記事の内容は `common/` 配下のドキュメントと一貫しているが、記事はより具体例が多く、読み物として構成されている

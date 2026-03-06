@@ -25,7 +25,6 @@ ai-native-dev-operation/
 │   │   ├── system-auditor.md            ← システム監査官
 │   │   └── user-ops-support.md          ← ユーザー・運用サポート
 │   │
-│   └── takahiro-gem-prompt.md           ← 著者の思考パターン再現Gem（独立利用）
 │
 ├── guides/                              ← 人間向けガイド
 │   ├── usage-guide.md                   ← ドキュメント活用ガイド（セットアップ・利用シーン別）
