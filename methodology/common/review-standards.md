@@ -16,6 +16,18 @@ purpose: コードレビューの4層構造・7つのレビュー視点・デシ
 
 ---
 
+## DOCUMENT_REFERENCE_RESOLUTION
+
+本ドキュメント内の `@ref:document-id#SECTION_ID` は他ドキュメントへの参照である。以下のルールで解決すること:
+
+1. `@ref:` の後の `document-id` に対応する読み込み済みドキュメントを特定する
+2. `#` の後の `SECTION_ID` に対応するセクション見出しを探し、その内容を参照する
+
+**参照先マッピング:**
+- `core-principles` → common/core-principles.md
+
+---
+
 ## REVIEW_ARCHITECTURE（全体構造）
 
 ```
@@ -306,6 +318,8 @@ purpose: コードレビューの4層構造・7つのレビュー視点・デシ
 | **重大度** | CRITICAL（即修正）/ WARNING（修正推奨）/ INFO（改善提案） |
 | **理由** | なぜ問題なのか（最上位原則との関連を明記） |
 | **対応案** | 具体的な修正方針 |
+
+品質ゲート・安全ゲート・オペレーター判断を統合した詳細な出力テンプレートは templates/review-output-template.md を参照。
 
 ---
 
