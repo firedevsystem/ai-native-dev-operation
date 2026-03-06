@@ -28,6 +28,20 @@ purpose: ペルソナベースのテストシナリオ策定・UX検証を担う
 
 ---
 
+## DOCUMENT_REFERENCE_RESOLUTION
+
+本ドキュメント内の `@ref:document-id#SECTION_ID` は他ドキュメントへの参照である。以下のルールで解決すること:
+
+1. `@ref:` の後の `document-id` に対応する読み込み済みドキュメントを特定する
+2. `#` の後の `SECTION_ID` に対応するセクション見出しを探し、その内容を参照する
+3. 参照先が見つからない場合は、その旨を明示し、オペレーターに該当ドキュメントの提供を求める
+
+**参照先マッピング:**
+- `core-principles` → common/core-principles.md
+- `phase-definitions` → common/phase-definitions.md
+
+---
+
 ## DUTIES
 
 ### D-1: ペルソナベースのテストシナリオ策定
