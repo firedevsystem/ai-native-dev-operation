@@ -25,64 +25,69 @@
 
 ```
 ai-native-dev-operation/
-├── articles/                       ← Zenn投稿用の個別記事（全8本、frontmatter付き）
-│   ├── 00-introduction.md          ← 序章（published: true ── 無料公開）
-│   ├── 01-operator.md              ← 第1章（published: true ── 無料公開）
-│   ├── 02-ai-roles.md              ← 第2章（published: true ── 無料公開）
-│   ├── 03-phase0-2.md              ← 第3章（published: false ── Book有料版で提供）
-│   ├── 04-phase3-5.md              ← 第4章（published: false）
-│   ├── 05-phase6-8.md              ← 第5章（published: false）
-│   ├── 06-review-structure.md      ← 第6章（published: false）
-│   └── 07-principles.md            ← 第7章（published: false）
+├── methodology/                         ← AIネイティブ開発の方法論
+│   ├── INDEX.md                         ← ドキュメント索引・ロール別ドキュメントセット定義
+│   │
+│   ├── common/                          ← 共通知識（全ロールが参照）
+│   │   ├── core-principles.md           ← 根源的原則・構造設計ルール・牽制関係
+│   │   ├── phase-definitions.md         ← Phase 0〜8 の定義・ゲート条件・差し戻しルール
+│   │   └── review-standards.md          ← コードレビュー4層構造・7視点・デシジョンツリー
+│   │
+│   ├── roles/                           ← 各AIロールのシステムプロンプト
+│   │   ├── pm-scrum-master.md           ← PM・スクラムマスター
+│   │   ├── coding-agent.md              ← コーディングエージェント
+│   │   ├── code-reviewer.md             ← コードレビュアー
+│   │   ├── system-auditor.md            ← システム監査官
+│   │   └── user-ops-support.md          ← ユーザー・運用サポート
+│   │
+│   └── takahiro-gem-prompt.md           ← 著者の思考パターン再現Gem（独立利用）
 │
-├── books/                          ← Zenn Book（有料販売）
+├── guides/                              ← 人間向けガイド
+│   ├── usage-guide.md                   ← ドキュメント活用ガイド
+│   └── zenn-publishing-guide.md         ← Zenn投稿用メタデータ設定ガイド
+│
+├── articles/                            ← Zenn投稿用の個別記事（全8本、frontmatter付き）
+│   ├── ai-native-dev-00-introduction.md ← 序章（published: true）
+│   ├── ai-native-dev-01-operator.md     ← 第1章（published: true）
+│   ├── ai-native-dev-02-ai-roles.md     ← 第2章（published: true）
+│   ├── ai-native-dev-03-phase0-2.md     ← 第3章（published: false）
+│   ├── ai-native-dev-04-phase3-5.md     ← 第4章（published: false）
+│   ├── ai-native-dev-05-phase6-8.md     ← 第5章（published: false）
+│   ├── ai-native-dev-06-review-structure.md ← 第6章（published: false）
+│   └── ai-native-dev-07-principles.md   ← 第7章（published: false）
+│
+├── books/                               ← Zenn Book（有料販売）
 │   └── ai-native-dev/
-│       ├── config.yaml             ← Book設定（タイトル・価格1,000円・チャプター順序）
-│       ├── introduction.md         ← 序章（free: true ── 無料チャプター）
-│       ├── operator.md             ← 第1章（free: true ── 無料チャプター）
-│       ├── ai-roles.md             ← 第2章
-│       ├── phase0-2.md             ← 第3章
-│       ├── phase3-5.md             ← 第4章
-│       ├── phase6-8.md             ← 第5章
-│       ├── review-structure.md     ← 第6章
-│       └── principles.md           ← 第7章
+│       ├── config.yaml                  ← Book設定（タイトル・価格1,000円・チャプター順序）
+│       └── *.md                         ← 全8チャプター
 │
-├── ai-native-dev-navigator.md      ← AIナビゲーター用システムプロンプト
-│                                      Claude Code / Claude Projectsに読み込ませると
-│                                      Phase 0〜8の壁打ち・完了判定を自動で行うナビゲーターになる
-│
-├── review-ruleset.md               ← コードレビュー判断体系（7視点のデシジョンツリー）
-│                                      AIレビューエージェントに読み込ませてレビューを実行させるためのルールセット
-│                                      4層構造：データ層→I/F層→コード層→非機能層
-│
-├── takahiro-gem-prompt.md          ← 著者（Takahiro）の思考パターン再現用Gemプロンプト
-│                                      Google AI Studio / Claude Projects / ChatGPT GPTsで
-│                                      「もう一人の自分」として壁打ち・レビュー相手に使う
-│
-├── CLAUDE-MD-SETUP-GUIDE.md        ← 上記3ファイル（navigator / ruleset / gem）の使い方・配置方法ガイド
-│                                      Claude Code / Claude Projects / Google AI Studioへの組み込み手順
-│
-├── zenn-publishing-guide.md        ← Zenn投稿時のメタデータ設定ガイド
-│                                      各記事のトピック・絵文字・タイプ設定、
-│                                      Zenn固有マークダウン記法の差し込み推奨箇所
-│
-├── package.json                    ← Node.js設定（zenn-cli依存）
-├── .gitignore                      ← node_modules除外設定
-│
-└── HANDOVER.md                     ← 本ファイル（AI間引継ぎドキュメント）
+├── HANDOVER.md                          ← 本ファイル（AI間引継ぎドキュメント）
+├── package.json                         ← Node.js設定（zenn-cli依存）
+└── .gitignore                           ← node_modules除外設定
 ```
 
-### 3つのコアファイルの関係
+### ドキュメント構造の設計思想
 
-```
-takahiro-gem-prompt.md  ← 「人物」の再現（壁打ち・教育用）
-    │ 内包する
-    ├── review-ruleset.md      ← 技術判断の「How」（AIレビューエージェント用）
-    └── ai-native-dev-navigator.md  ← 開発プロセスの「How」（案件進行のガイドレール）
-```
+旧構造（navigator.md + review-ruleset.md + gem-prompt.md の3ファイル）を、以下の設計思想で再構成した:
 
-- `articles/` 配下の8記事は、`navigator` と `ruleset` の思想を**一般読者向けに解説した記事**である
-- 記事の内容は3つのコアファイルと一貫しているが、記事はより具体例が多く、読み物として構成されている
+1. **共通知識の分離:** 全ロールが参照する原則・フェーズ定義・レビュー基準を `common/` に集約し、冗長性を排除
+2. **ロール別プロンプト:** 5つのAIロールそれぞれに独立したシステムプロンプトを生成（`roles/`）
+3. **AI最適化記法:** YAMLフロントマター、`@ref:` クロスリファレンス、構造化セクションIDにより、AIが効率的に参照できる形式
+4. **ドキュメントセット定義:** `INDEX.md` にロールごとに読み込むべきドキュメントの組み合わせを明記
+
+### ロール別ドキュメントセット（INDEX.md に定義）
+
+| ロール | 読み込むドキュメント |
+|--------|-------------------|
+| PM・スクラムマスター | core-principles + phase-definitions + roles/pm-scrum-master |
+| コーディングエージェント | core-principles + phase-definitions + review-standards + roles/coding-agent |
+| コードレビュアー | core-principles + review-standards + roles/code-reviewer |
+| システム監査官 | core-principles + review-standards + roles/system-auditor |
+| ユーザー・運用サポート | core-principles + phase-definitions + roles/user-ops-support |
+| 壁打ちGem（独立） | takahiro-gem-prompt.md のみ |
+
+- `articles/` 配下の8記事は、方法論の思想を**一般読者向けに解説した記事**である
+- 記事の内容は `common/` 配下のドキュメントと一貫しているが、記事はより具体例が多く、読み物として構成されている
 
 ---
 
