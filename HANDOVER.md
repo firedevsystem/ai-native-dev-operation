@@ -25,6 +25,24 @@
 
 ```
 ai-native-dev-operation/
+├── methodology/                    ← コア方法論（システムプロンプト・フレームワーク）
+│   ├── ai-native-dev-navigator.md  ← AIナビゲーター用システムプロンプト
+│   │                                  Claude Code / Claude Projectsに読み込ませると
+│   │                                  Phase 0〜8の壁打ち・完了判定を自動で行うナビゲーターになる
+│   ├── review-ruleset.md           ← コードレビュー判断体系（7視点のデシジョンツリー）
+│   │                                  AIレビューエージェントに読み込ませてレビューを実行させるためのルールセット
+│   │                                  4層構造：データ層→I/F層→コード層→非機能層
+│   └── takahiro-gem-prompt.md      ← 著者（Takahiro）の思考パターン再現用Gemプロンプト
+│                                      Google AI Studio / Claude Projects / ChatGPT GPTsで
+│                                      「もう一人の自分」として壁打ち・レビュー相手に使う
+│
+├── guides/                         ← セットアップ・運用ガイド
+│   ├── CLAUDE-MD-SETUP-GUIDE.md    ← 上記3ファイル（navigator / ruleset / gem）の使い方・配置方法ガイド
+│   │                                  Claude Code / Claude Projects / Google AI Studioへの組み込み手順
+│   └── zenn-publishing-guide.md    ← Zenn投稿時のメタデータ設定ガイド
+│                                      各記事のトピック・絵文字・タイプ設定、
+│                                      Zenn固有マークダウン記法の差し込み推奨箇所
+│
 ├── articles/                       ← Zenn投稿用の個別記事（全8本、frontmatter付き）
 │   ├── 00-introduction.md          ← 序章（published: true ── 無料公開）
 │   ├── 01-operator.md              ← 第1章（published: true ── 無料公開）
@@ -47,29 +65,9 @@ ai-native-dev-operation/
 │       ├── review-structure.md     ← 第6章
 │       └── principles.md           ← 第7章
 │
-├── ai-native-dev-navigator.md      ← AIナビゲーター用システムプロンプト
-│                                      Claude Code / Claude Projectsに読み込ませると
-│                                      Phase 0〜8の壁打ち・完了判定を自動で行うナビゲーターになる
-│
-├── review-ruleset.md               ← コードレビュー判断体系（7視点のデシジョンツリー）
-│                                      AIレビューエージェントに読み込ませてレビューを実行させるためのルールセット
-│                                      4層構造：データ層→I/F層→コード層→非機能層
-│
-├── takahiro-gem-prompt.md          ← 著者（Takahiro）の思考パターン再現用Gemプロンプト
-│                                      Google AI Studio / Claude Projects / ChatGPT GPTsで
-│                                      「もう一人の自分」として壁打ち・レビュー相手に使う
-│
-├── CLAUDE-MD-SETUP-GUIDE.md        ← 上記3ファイル（navigator / ruleset / gem）の使い方・配置方法ガイド
-│                                      Claude Code / Claude Projects / Google AI Studioへの組み込み手順
-│
-├── zenn-publishing-guide.md        ← Zenn投稿時のメタデータ設定ガイド
-│                                      各記事のトピック・絵文字・タイプ設定、
-│                                      Zenn固有マークダウン記法の差し込み推奨箇所
-│
+├── HANDOVER.md                     ← 本ファイル（AI間引継ぎドキュメント）
 ├── package.json                    ← Node.js設定（zenn-cli依存）
-├── .gitignore                      ← node_modules除外設定
-│
-└── HANDOVER.md                     ← 本ファイル（AI間引継ぎドキュメント）
+└── .gitignore                      ← node_modules除外設定
 ```
 
 ### 3つのコアファイルの関係
